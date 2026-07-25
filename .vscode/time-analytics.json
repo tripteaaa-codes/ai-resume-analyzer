@@ -1,0 +1,121 @@
+{
+  "version": "1.0",
+  "project": {
+    "totalFocusTime": 2069257,
+    "totalActiveTime": 323863
+  },
+  "files": {
+    "backend/src/config/db.js": {
+      "pending": 0,
+      "focus": 29467
+    },
+    "backend/src/controllers/authController.js": {
+      "pending": 70409,
+      "focus": 131006
+    },
+    "backend/src/controllers/resumeController.js": {
+      "pending": 0,
+      "focus": 22357
+    },
+    "backend/src/middleware/authMiddleware.js": {
+      "pending": 1023,
+      "focus": 17285
+    },
+    "backend/src/middleware/uploadMiddleware.js": {
+      "pending": 0,
+      "focus": 15048
+    },
+    "backend/src/models/Resume.js": {
+      "pending": 0,
+      "focus": 1803
+    },
+    "backend/src/models/User.js": {
+      "pending": 0,
+      "focus": 10141
+    },
+    "backend/src/models/user.js": {
+      "pending": 117266,
+      "focus": 221182
+    },
+    "backend/src/routes/authRoutes.js": {
+      "pending": 20335,
+      "focus": 73828
+    },
+    "backend/src/routes/resumeRoutes.js": {
+      "pending": 0,
+      "focus": 32349
+    },
+    "backend/src/services/pdfService.js": {
+      "pending": 0,
+      "focus": 11910
+    },
+    "backend/src/services/aiService.js": {
+      "pending": 0,
+      "focus": 13380
+    },
+    "backend/src/utils/generateToken.js": {
+      "pending": 88769,
+      "focus": 215183
+    },
+    "backend/src/app.js": {
+      "pending": 7148,
+      "focus": 352939
+    },
+    "frontend/src/components/Navbar.jsx": {
+      "pending": 0,
+      "focus": 27179
+    },
+    "frontend/src/components/ResumeUpload.jsx": {
+      "pending": 0,
+      "focus": 14493
+    },
+    "frontend/src/components/ScoreCard.jsx": {
+      "pending": 0,
+      "focus": 20340
+    },
+    "frontend/src/pages/Login.jsx": {
+      "pending": 0,
+      "focus": 7342
+    },
+    "frontend/src/pages/Signup.jsx": {
+      "pending": 0,
+      "focus": 10558
+    },
+    "frontend/src/pages/Document.jsx": {
+      "pending": 0,
+      "focus": 6358
+    },
+    "frontend/src/pages/Result.jsx": {
+      "pending": 0,
+      "focus": 42388
+    },
+    "frontend/src/services/api.js": {
+      "pending": 0,
+      "focus": 14731
+    },
+    "frontend/src/App.jsx": {
+      "pending": 0,
+      "focus": 8139
+    },
+    "frontend/src/main.jsx": {
+      "pending": 0,
+      "focus": 165199
+    },
+    ".env": {
+      "pending": 2576,
+      "focus": 76438
+    },
+    "package.json": {
+      "pending": 15315,
+      "focus": 124645
+    },
+    ".gitignore": {
+      "pending": 1022,
+      "focus": 39126
+    }
+  },
+  "deleted": {
+    "active": 0,
+    "focus": 48093
+  }
+}
