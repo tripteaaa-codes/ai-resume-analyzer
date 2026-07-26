@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "project": {
-    "totalFocusTime": 2069257,
-    "totalActiveTime": 323863
+    "totalFocusTime": 16235776,
+    "totalActiveTime": 1977831
   },
   "files": {
     "backend/src/config/db.js": {
@@ -10,24 +10,24 @@
       "focus": 29467
     },
     "backend/src/controllers/authController.js": {
-      "pending": 70409,
-      "focus": 131006
+      "pending": 71437,
+      "focus": 284815
     },
     "backend/src/controllers/resumeController.js": {
-      "pending": 0,
-      "focus": 22357
+      "pending": 668143,
+      "focus": 2145627
     },
     "backend/src/middleware/authMiddleware.js": {
       "pending": 1023,
-      "focus": 17285
+      "focus": 58451
     },
     "backend/src/middleware/uploadMiddleware.js": {
-      "pending": 0,
-      "focus": 15048
+      "pending": 220950,
+      "focus": 415120
     },
     "backend/src/models/Resume.js": {
-      "pending": 0,
-      "focus": 1803
+      "pending": 265152,
+      "focus": 628057
     },
     "backend/src/models/User.js": {
       "pending": 0,
@@ -35,31 +35,31 @@
     },
     "backend/src/models/user.js": {
       "pending": 117266,
-      "focus": 221182
+      "focus": 251242
     },
     "backend/src/routes/authRoutes.js": {
       "pending": 20335,
-      "focus": 73828
+      "focus": 140345
     },
     "backend/src/routes/resumeRoutes.js": {
-      "pending": 0,
-      "focus": 32349
+      "pending": 158079,
+      "focus": 501406
     },
     "backend/src/services/pdfService.js": {
-      "pending": 0,
-      "focus": 11910
+      "pending": 120466,
+      "focus": 379169
     },
     "backend/src/services/aiService.js": {
-      "pending": 0,
-      "focus": 13380
+      "pending": 121802,
+      "focus": 300876
     },
     "backend/src/utils/generateToken.js": {
-      "pending": 88769,
-      "focus": 215183
+      "pending": 89796,
+      "focus": 230039
     },
     "backend/src/app.js": {
-      "pending": 7148,
-      "focus": 352939
+      "pending": 63353,
+      "focus": 619716
     },
     "frontend/src/components/Navbar.jsx": {
       "pending": 0,
@@ -102,20 +102,20 @@
       "focus": 165199
     },
     ".env": {
-      "pending": 2576,
-      "focus": 76438
+      "pending": 24542,
+      "focus": 398638
     },
     "package.json": {
-      "pending": 15315,
-      "focus": 124645
+      "pending": 34465,
+      "focus": 272304
     },
     ".gitignore": {
       "pending": 1022,
-      "focus": 39126
+      "focus": 135050
     }
   },
   "deleted": {
     "active": 0,
-    "focus": 48093
+    "focus": 88998
   }
 }
