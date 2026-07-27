@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "project": {
-    "totalFocusTime": 16235776,
-    "totalActiveTime": 1977831
+    "totalFocusTime": 46915716,
+    "totalActiveTime": 3472749
   },
   "files": {
     "backend/src/config/db.js": {
@@ -11,11 +11,11 @@
     },
     "backend/src/controllers/authController.js": {
       "pending": 71437,
-      "focus": 284815
+      "focus": 317896
     },
     "backend/src/controllers/resumeController.js": {
-      "pending": 668143,
-      "focus": 2145627
+      "pending": 1043988,
+      "focus": 3830521
     },
     "backend/src/middleware/authMiddleware.js": {
       "pending": 1023,
@@ -26,8 +26,8 @@
       "focus": 415120
     },
     "backend/src/models/Resume.js": {
-      "pending": 265152,
-      "focus": 628057
+      "pending": 325093,
+      "focus": 923630
     },
     "backend/src/models/User.js": {
       "pending": 0,
@@ -35,87 +35,131 @@
     },
     "backend/src/models/user.js": {
       "pending": 117266,
-      "focus": 251242
+      "focus": 254111
     },
     "backend/src/routes/authRoutes.js": {
       "pending": 20335,
-      "focus": 140345
+      "focus": 173159
     },
     "backend/src/routes/resumeRoutes.js": {
-      "pending": 158079,
-      "focus": 501406
+      "pending": 203275,
+      "focus": 864686
     },
     "backend/src/services/pdfService.js": {
       "pending": 120466,
-      "focus": 379169
+      "focus": 449600
     },
     "backend/src/services/aiService.js": {
-      "pending": 121802,
-      "focus": 300876
+      "pending": 270143,
+      "focus": 940828
     },
     "backend/src/utils/generateToken.js": {
       "pending": 89796,
       "focus": 230039
     },
     "backend/src/app.js": {
-      "pending": 63353,
-      "focus": 619716
+      "pending": 72995,
+      "focus": 917225
     },
     "frontend/src/components/Navbar.jsx": {
-      "pending": 0,
-      "focus": 27179
-    },
-    "frontend/src/components/ResumeUpload.jsx": {
-      "pending": 0,
-      "focus": 14493
-    },
-    "frontend/src/components/ScoreCard.jsx": {
-      "pending": 0,
-      "focus": 20340
+      "pending": 11814,
+      "focus": 155473
     },
     "frontend/src/pages/Login.jsx": {
-      "pending": 0,
-      "focus": 7342
-    },
-    "frontend/src/pages/Signup.jsx": {
-      "pending": 0,
-      "focus": 10558
-    },
-    "frontend/src/pages/Document.jsx": {
-      "pending": 0,
-      "focus": 6358
-    },
-    "frontend/src/pages/Result.jsx": {
-      "pending": 0,
-      "focus": 42388
-    },
-    "frontend/src/services/api.js": {
-      "pending": 0,
-      "focus": 14731
-    },
-    "frontend/src/App.jsx": {
-      "pending": 0,
-      "focus": 8139
-    },
-    "frontend/src/main.jsx": {
-      "pending": 0,
-      "focus": 165199
+      "pending": 315951,
+      "focus": 1287289
     },
     ".env": {
-      "pending": 24542,
-      "focus": 398638
+      "pending": 36720,
+      "focus": 650546
     },
     "package.json": {
-      "pending": 34465,
-      "focus": 272304
+      "pending": 34982,
+      "focus": 324903
     },
     ".gitignore": {
-      "pending": 1022,
-      "focus": 135050
+      "pending": 2597,
+      "focus": 140981
+    },
+    "frontend/src/components/Sidebar.jsx": {
+      "pending": 0,
+      "focus": 27411
+    },
+    "frontend/src/components/ResumeCard.jsx": {
+      "pending": 0,
+      "focus": 47195
+    },
+    "frontend/src/components/ATSCard.jsx": {
+      "pending": 0,
+      "focus": 13137
+    },
+    "frontend/src/components/ProtectRoute.jsx": {
+      "pending": 0,
+      "focus": 23188
+    },
+    "frontend/src/pages/ResultHistory.jsx": {
+      "pending": 0,
+      "focus": 57261
+    },
+    "frontend/src/pages/Register.jsx": {
+      "pending": 3627,
+      "focus": 124882
+    },
+    "frontend/src/pages/Dashboard.jsx": {
+      "pending": 5106,
+      "focus": 127679
+    },
+    "frontend/src/pages/UploadResume.jsx": {
+      "pending": 0,
+      "focus": 31743
+    },
+    "frontend/src/pages/JobMatch.jsx": {
+      "pending": 0,
+      "focus": 17702
+    },
+    "frontend/src/pages/ResumeDetails.jsx": {
+      "pending": 0,
+      "focus": 16839
+    },
+    "frontend/src/App.jsx": {
+      "pending": 335659,
+      "focus": 845147
+    },
+    "frontend/src/App.css": {
+      "pending": 10749,
+      "focus": 246623
+    },
+    "frontend/src/main.jsx": {
+      "pending": 81651,
+      "focus": 345622
+    },
+    "frontend/.gitignore": {
+      "pending": 0,
+      "focus": 830
+    },
+    "frontend/index.html": {
+      "pending": 4823,
+      "focus": 127200
+    },
+    "frontend/package.json": {
+      "pending": 0,
+      "focus": 35501
+    },
+    "frontend/tsconfig.json": {
+      "pending": 0,
+      "focus": 128668
+    },
+    "frontend/src/services/api.js": {
+      "pending": 7366,
+      "focus": 453332
+    },
+    "frontend/src/pages/History.jsx": {
+      "pending": 1025,
+      "focus": 41909
     }
   },
   "deleted": {
-    "active": 0,
-    "focus": 88998
+    "active": 62887,
+    "focus": 853285
   }
 }

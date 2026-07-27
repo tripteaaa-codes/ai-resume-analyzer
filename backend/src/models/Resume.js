@@ -1,40 +1,66 @@
 const mongoose = require("mongoose");
 
-const resumeSchema = new mongoose.Schema (
+const resumeSchema = new mongoose.Schema(
     {
-       user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: true
-       },
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true
+        },
 
-       originalName: {
-        type: String,
-        required: true
-       },
+        originalName: {
+            type: String,
+            required: true
+        },
 
-       fileName: {
-        type: String,
-        required: true
-       },
+        fileName: {
+            type: String,
+            required: true
+        },
 
-       filePath: {
-        type: String,
-        required: true
-       },
+        filePath: {
+            type: String,
+            required: true
+        },
 
-       fileSize: {
-        type: String,
-        required: true
-       },
+        fileSize: {
+            type: String,
+            required: true
+        },
 
-       analysis: {
-        type: Object
-       },
-       
-       atsScore: {
-        type: Number
-       }
+        extractedText: {
+            type: String,
+            required: true
+        },
+
+        analysis: {
+            type: Object,
+        },
+
+        atsScore: {
+            type: Number,
+        },
+
+        status: {
+            type: String,
+            enum: ["uploaded", "analyzed"],
+            default: "uploaded"
+        },
+        jobDescription: {
+            type: String
+        },
+
+        matchScore: {
+            type: Number
+        },
+
+        matchedSkills: {
+            type: [String]
+        },
+
+        missingSkillsFromJD: {
+            type: [String]
+        }
     },
 
     {
