@@ -1,194 +1,204 @@
 import { useState } from "react";
 import api from "../services/api";
+import Navbar from "../components/Navbar";
+
+function Dashboard() {
+
+    const [file, setFile] = useState(null);
+
+    const [uploadedResume, setUploadedResume] = useState(null);
+
+    const [analysis, setAnalysis] = useState(null);
+
+    const [loading, setLoading] = useState(false);
 
 
-function Dashboard(){
+    const handleUpload = async () => {
 
-    const [file,setFile] = useState(null);
-    const [resume,setResume] = useState(null);
-    const [analysis,setAnalysis] = useState(null);
+        if (!file) {
+            return alert("Please select a resume");
+        }
 
+        try {
 
-    const uploadResume = async()=>{
+            const formData = new FormData();
 
-        const formData = new FormData();
+            formData.append("resume", file);
 
-        formData.append("resume", file);
-
-
-        try{
-
-            const response = await api.post(
+            const res = await api.post(
                 "/resume/upload",
                 formData,
                 {
-                    headers:{
-                        "Content-Type":"multipart/form-data"
+                    headers: {
+                        "Content-Type": "multipart/form-data"
                     }
                 }
             );
 
+            setUploadedResume(res.data.resume);
 
-            setResume(response.data.resume);
+            alert("Resume uploaded successfully");
 
-        }
-        catch(error){
+        } catch (error) {
 
             console.log(error);
 
-        }
-
-    };
-
-
-    const analyzeResume = async()=>{
-
-        try{
-
-            const response = await api.post(
-                `/resume/${resume._id}/analyze`
+            alert(
+                error.response?.data?.message ||
+                "Upload failed"
             );
 
-
-            setAnalysis(response.data.analysis);
-
-
         }
-        catch(error){
+
+    };
+
+
+    const handleAnalyze = async () => {
+
+        if (!uploadedResume) {
+            return alert("Upload a resume first");
+        }
+
+        setLoading(true);
+
+        try {
+
+            const res = await api.post(
+                `/resume/${uploadedResume._id}/analyze`
+            );
+
+            setAnalysis(res.data.analysis);
+
+        } catch (error) {
 
             console.log(error);
+
+            alert(
+                error.response?.data?.message ||
+                "Analysis failed"
+            );
+
+        } finally {
+
+            setLoading(false);
 
         }
 
     };
 
 
-    return(
+    return (
 
-        <div className="container">
+        <>
 
-            <div className="card">
+            <Navbar />
 
-                <h1>
-                    Dashboard
-                </h1>
+            <div className="container">
 
+                <div className="card">
 
-                <h3>
-                    Upload Resume
-                </h3>
+                    <h1>Dashboard</h1>
 
+                    <h3>Upload Resume</h3>
 
-                <input
+                    <input
+                        type="file"
+                        accept=".pdf"
+                        onChange={(e) => setFile(e.target.files[0])}
+                    />
 
-                    type="file"
-                    accept=".pdf"
-                    onChange={(e)=>setFile(e.target.files[0])}
-
-                />
-
-
-                <button onClick={uploadResume}>
-                    Upload
-                </button>
+                    <button onClick={handleUpload}>
+                        Upload Resume
+                    </button>
 
 
+                    {uploadedResume && (
 
-                {
-                    resume && (
+                        <div style={{ marginTop: "20px" }}>
 
-                        <div>
-
-                            <h3>
-                                Uploaded Resume
-                            </h3>
-
+                            <h3>Uploaded Resume</h3>
 
                             <p>
-                                {resume.originalName}
+                                {uploadedResume.originalName}
                             </p>
 
+                            <button onClick={handleAnalyze}>
 
-                            <button onClick={analyzeResume}>
-                                Analyze Resume
+                                {loading
+                                    ? "Analyzing..."
+                                    : "Analyze Resume"
+                                }
+
                             </button>
 
+                        </div>
+
+                    )}
+
+
+                    {analysis && (
+
+                        <div style={{ marginTop: "30px" }}>
+
+                            <h2>ATS Score: {analysis.atsScore}</h2>
+
+
+                            <h3>Strengths</h3>
+
+                            <ul>
+
+                                {analysis.strengths.map((item, index) => (
+
+                                    <li key={index}>
+                                        {item}
+                                    </li>
+
+                                ))}
+
+                            </ul>
+
+
+                            <h3>Missing Skills</h3>
+
+                            <ul>
+
+                                {analysis.missingSkills.map((item, index) => (
+
+                                    <li key={index}>
+                                        {item}
+                                    </li>
+
+                                ))}
+
+                            </ul>
+
+
+                            <h3>Suggestions</h3>
+
+                            <ul>
+
+                                {analysis.suggestions.map((item, index) => (
+
+                                    <li key={index}>
+                                        {item}
+                                    </li>
+
+                                ))}
+
+                            </ul>
 
                         </div>
 
-                    )
-                }
+                    )}
 
-
-
-                {
-                    analysis && (
-
-                        <div>
-
-                            <h2>
-                                ATS Score: {analysis.atsScore}
-                            </h2>
-
-
-                            <h3>
-                                Strengths
-                            </h3>
-
-                            {
-                                analysis.strengths.map(
-                                    (item,index)=>(
-                                        <p key={index}>
-                                            {item}
-                                        </p>
-                                    )
-                                )
-                            }
-
-
-                            <h3>
-                                Missing Skills
-                            </h3>
-
-                            {
-                                analysis.missingSkills.map(
-                                    (item,index)=>(
-                                        <p key={index}>
-                                            {item}
-                                        </p>
-                                    )
-                                )
-                            }
-
-
-                            <h3>
-                                Suggestions
-                            </h3>
-
-                            {
-                                analysis.suggestions.map(
-                                    (item,index)=>(
-                                        <p key={index}>
-                                            {item}
-                                        </p>
-                                    )
-                                )
-                            }
-
-
-                        </div>
-
-                    )
-                }
-
+                </div>
 
             </div>
 
-        </div>
+        </>
 
     );
 
 }
-
 
 export default Dashboard;

@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "project": {
-    "totalFocusTime": 46915716,
-    "totalActiveTime": 3472749
+    "totalFocusTime": 49208225,
+    "totalActiveTime": 3526350
   },
   "files": {
     "backend/src/config/db.js": {
@@ -15,7 +15,7 @@
     },
     "backend/src/controllers/resumeController.js": {
       "pending": 1043988,
-      "focus": 3830521
+      "focus": 3942250
     },
     "backend/src/middleware/authMiddleware.js": {
       "pending": 1023,
@@ -50,8 +50,8 @@
       "focus": 449600
     },
     "backend/src/services/aiService.js": {
-      "pending": 270143,
-      "focus": 940828
+      "pending": 289423,
+      "focus": 1232408
     },
     "backend/src/utils/generateToken.js": {
       "pending": 89796,
@@ -62,12 +62,12 @@
       "focus": 917225
     },
     "frontend/src/components/Navbar.jsx": {
-      "pending": 11814,
-      "focus": 155473
+      "pending": 19352,
+      "focus": 254728
     },
     "frontend/src/pages/Login.jsx": {
       "pending": 315951,
-      "focus": 1287289
+      "focus": 1289778
     },
     ".env": {
       "pending": 36720,
@@ -79,7 +79,7 @@
     },
     ".gitignore": {
       "pending": 2597,
-      "focus": 140981
+      "focus": 245731
     },
     "frontend/src/components/Sidebar.jsx": {
       "pending": 0,
@@ -103,11 +103,11 @@
     },
     "frontend/src/pages/Register.jsx": {
       "pending": 3627,
-      "focus": 124882
+      "focus": 127372
     },
     "frontend/src/pages/Dashboard.jsx": {
-      "pending": 5106,
-      "focus": 127679
+      "pending": 9991,
+      "focus": 198422
     },
     "frontend/src/pages/UploadResume.jsx": {
       "pending": 0,
@@ -123,7 +123,7 @@
     },
     "frontend/src/App.jsx": {
       "pending": 335659,
-      "focus": 845147
+      "focus": 885572
     },
     "frontend/src/App.css": {
       "pending": 10749,
@@ -146,16 +146,16 @@
       "focus": 35501
     },
     "frontend/tsconfig.json": {
-      "pending": 0,
-      "focus": 128668
+      "pending": 17404,
+      "focus": 257387
     },
     "frontend/src/services/api.js": {
-      "pending": 7366,
-      "focus": 453332
+      "pending": 10312,
+      "focus": 464298
     },
     "frontend/src/pages/History.jsx": {
-      "pending": 1025,
-      "focus": 41909
+      "pending": 2573,
+      "focus": 63104
     }
   },
   "deleted": {

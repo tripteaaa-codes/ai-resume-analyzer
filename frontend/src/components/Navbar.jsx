@@ -5,11 +5,8 @@ function Navbar() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-
-        localStorage.clear();
-
-        navigate("/login");
-
+        localStorage.removeItem("token");
+        window.location.href = "/login";
     };
 
     return (

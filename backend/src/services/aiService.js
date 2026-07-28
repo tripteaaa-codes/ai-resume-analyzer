@@ -7,104 +7,154 @@ const ai = new GoogleGenAI({
 
 const analyzeResumeAI = async (resumeText, jobDescription = "") => {
 
-    const prompt = `
+    const text = resumeText.toLowerCase();
 
-You are an expert ATS Resume Analyzer.
+    const technicalSkills = [
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "node",
+        "express",
+        "mongodb",
+        "java",
+        "python",
+        "sql",
+        "git",
+        "github",
+        "docker",
+        "aws",
+        "typescript",
+        "mysql"
+    ];
 
-Analyze ONLY the resume provided below.
-Do not use previous responses.
-Do not give a fixed score.
-Calculate the ATS score based on the actual skills, projects, education, experience, formatting, and relevance of this resume.
+    const foundSkills = technicalSkills.filter(
+        skill => text.includes(skill)
+    );
 
-${jobDescription ? `
-Compare the resume with this job description:
+    let score = 45;
 
-${jobDescription}
-` : ""}
+    score += foundSkills.length * 4;
 
+    if (text.includes("project")) score += 10;
+    if (text.includes("education")) score += 5;
+    if (text.includes("internship")) score += 8;
+    if (text.includes("certificate")) score += 5;
 
-Resume Content:
+    if (jobDescription) {
 
-${resumeText}
+        const jd = jobDescription.toLowerCase();
 
-
-Return ONLY valid JSON.
-
-Use exactly this structure:
-
-{
-    "atsScore": number,
-    "strengths": [
-        "strength 1",
-        "strength 2",
-        "strength 3"
-    ],
-    "missingSkills": [
-        "skill 1",
-        "skill 2",
-        "skill 3"
-    ],
-    "suggestions": [
-        "suggestion 1",
-        "suggestion 2",
-        "suggestion 3"
-    ]
-}
-
-Rules:
-
-- atsScore must be between 0 and 100.
-- Give a different score depending on the resume quality.
-- strengths must come from the provided resume.
-- missingSkills should mention technologies or skills absent but valuable.
-- suggestions should be specific improvements for this resume.
-- Never return the same response for different resumes.
-
-`;
-
-
-    try {
-
-        console.log(
-            "Analyzing resume:",
-            resumeText.substring(0, 200)
+        const matchedJD = technicalSkills.filter(
+            skill => jd.includes(skill) && text.includes(skill)
         );
 
-
-        const response = await ai.models.generateContent({
-
-            model: "gemini-2.5-flash",
-
-            contents: prompt,
-
-            config: {
-                temperature: 0.8
-            }
-
-        });
-
-
-        const text = response.text;
-
-
-        const cleaned = text
-            .replace(/```json/g, "")
-            .replace(/```/g, "")
-            .trim();
-
-
-        return JSON.parse(cleaned);
-
-
-    } catch (error) {
-
-        console.log("Gemini Error:", error);
-
-        throw error;
+        score += matchedJD.length * 2;
 
     }
+
+    score = Math.min(score, 95);
+
+    const missingSkills = technicalSkills.filter(
+        skill => !foundSkills.includes(skill)
+    );
+
+    return {
+
+        atsScore: score,
+
+        strengths: [
+
+            foundSkills.length
+                ? `Includes ${foundSkills.length} relevant technical skills`
+                : "Resume contains readable text content",
+
+            text.includes("project")
+                ? "Contains project-related information"
+                : "Has a clear resume structure",
+
+            text.includes("education")
+                ? "Includes education details"
+                : "Provides candidate background information"
+
+        ],
+
+        missingSkills: missingSkills.slice(0, 3),
+
+        suggestions: [
+
+            "Add measurable achievements in projects or internships",
+
+            "Include GitHub, LinkedIn, or portfolio links",
+
+            "Add certifications, internships, or deployment experience"
+
+        ]
+
+    };
 
 };
 
 
-module.exports = analyzeResumeAI;
+const matchJobDescriptionAI = async (resumeText, jobDescription) => {
+
+    const resume = resumeText.toLowerCase();
+
+    const jd = jobDescription.toLowerCase();
+
+    const skills = [
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "node",
+        "express",
+        "mongodb",
+        "java",
+        "python",
+        "sql",
+        "git",
+        "github",
+        "docker",
+        "aws",
+        "typescript"
+    ];
+
+    const requiredSkills = skills.filter(
+        skill => jd.includes(skill)
+    );
+
+    const matchedSkills = requiredSkills.filter(
+        skill => resume.includes(skill)
+    );
+
+    const missingSkills = requiredSkills.filter(
+        skill => !resume.includes(skill)
+    );
+
+    const matchScore = requiredSkills.length === 0
+        ? 60
+        : Math.round(
+            (matchedSkills.length / requiredSkills.length) * 100
+        );
+
+    return {
+
+        matchScore,
+
+        matchedSkills,
+
+        missingSkills
+
+    };
+
+};
+
+
+module.exports = {
+
+    analyzeResumeAI,
+
+    matchJobDescriptionAI
+
+};
